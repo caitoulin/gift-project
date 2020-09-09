@@ -12,6 +12,6 @@
         "version": "7.0.0-beta.0"
       }
     ],
-    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    ["@babel/plugin-proposal-class-properties", { "loose": true }] // true定义属性在实例this.x = x; false Object.defineProperty(a,key,{value:})
   ]
 }

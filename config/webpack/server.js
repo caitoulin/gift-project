@@ -10,7 +10,6 @@ const hotMiddleWare = require('webpack-hot-middleware')(compiler, {
     log: false,
     heartbeat: 2000,
 });
-
 app.use(
     webpackDevMiddleware(compiler, {
         publicPath: devConfig.output.publicPath,

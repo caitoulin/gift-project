@@ -11,7 +11,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
-    filename: path.resolve(__dirname, '../../app/view/dist/lib/style.css'),
+    filename: 'lib/style.css',
 });
 
 module.exports = {
@@ -23,8 +23,8 @@ module.exports = {
         path.resolve(__dirname, '../../app/view/src/index.tsx'),
     ],
     output: {
-        path: path.join(__dirname, '..', '..', '/app/view/dist/lib/'),
-        filename: 'bundle.js',
+        path: path.join(__dirname, '..', '..', '/app/view/dist/'),
+        filename: 'lib/bundle.js',
         publicPath: '/',
     },
     resolve: {

@@ -11,9 +11,9 @@ see [egg docs][egg] for more detail.
 ### Development
 
 ```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
+$ npm insatll 
+$ npm run all
+$ open http://localhost:3000/
 ```
 
 ### Deploy

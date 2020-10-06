@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 确定页面入口，动态将css及js插入html
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
     filename: 'index.html',
@@ -28,13 +27,22 @@ module.exports = {
         publicPath: '/',
     },
     resolve: {
-        extensions: ['.js', '.json', '.tsx', '.jsx'],
+        extensions: ['.js', '.json', '.tsx', '.ts', '.jsx'],
     },
     module: {
         rules: [
             {
                 test: /\.(css|less)$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        },
+                    },
+                    'less-loader',
+                ],
             },
             {
                 test: /\.(jsx|js)$/,
@@ -61,7 +69,6 @@ module.exports = {
     plugins: [
         htmlWebpackPlugin,
         miniCssExtractPlugin,
-        new CleanWebpackPlugin(),
         new webpack.DllReferencePlugin({
             manifest: require('../../app/view/dist/dll/vendor.manifest.json'),
         }),

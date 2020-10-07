@@ -11,7 +11,7 @@ import MainFlow from '../pages/MainFlow/MainFlow';
 import NormalLoginForm from '../pages/Login/Login';
 import RegisterForm from '../pages/Register/RegisterForm';
 import { createHashHistory } from 'history';
-import SelectPage from '../pages/SelectPage/SlectPage';
+import SelectPage from '../pages/SelectPage/SelectPage';
 if ((module as any).hot) {
     (module as any).hot.accept();
 }

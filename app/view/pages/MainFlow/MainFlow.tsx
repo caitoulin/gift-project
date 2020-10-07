@@ -42,7 +42,7 @@ const MainFlow: React.FC<RouteComponentProps> = (props) => {
                     pathname: `home/${getId}`,
                 });
                 break;
-            case 'aniversary':
+            case 'anniversary':
                 props.history.push({
                     pathname: `home/${getId}`,
                 });

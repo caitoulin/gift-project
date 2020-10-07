@@ -11,6 +11,7 @@ import MarketPage from '../TabPage/MarketPage/MarketPage';
 import RecordsPage from '../TabPage/RecordsPage/RecordsPage';
 import ToursimPage from '../TabPage/ToursimPage/ToursimPage';
 import WordPage from '../TabPage/WordPage/WordPage';
+import './select.less';
 interface RouteParams {
     topicId: string;
 }
@@ -36,8 +37,11 @@ const SelectPage = () => {
     const { url, path } = useRouteMatch();
     return (
         <div>
-            <header>
-                <div>
+            <header className="gift-header">
+                <div className="include-item">
+                    <Link to="/main" className="name">
+                        {'Gift'}
+                    </Link>
                     <ul>
                         {includesContent.map((item, index) => {
                             return (
@@ -49,7 +53,7 @@ const SelectPage = () => {
                             );
                         })}
                     </ul>
-                    <div>用户中心</div>
+                    <div className="user-menu">用户中心</div>
                 </div>
             </header>
             <Switch>

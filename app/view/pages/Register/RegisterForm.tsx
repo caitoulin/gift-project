@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import './register.less';
-import { MailOutlined, LockOutlined } from '@ant-design/icons';
+import { MailOutlined, LockOutlined, HeartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 const RegisterForm = () => {
@@ -25,6 +25,14 @@ const RegisterForm = () => {
                         <Input
                             prefix={<MailOutlined />}
                             placeholder="输入您的电子邮箱"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="username"
+                        rules={[{ required: true, message: '请输入用户名' }]}>
+                        <Input
+                            prefix={<HeartOutlined />}
+                            placeholder="请输入用户名"
                         />
                     </Form.Item>
                     <Form.Item

@@ -3,13 +3,19 @@ import { Form, Input, Button } from 'antd';
 import './register.less';
 import { MailOutlined, LockOutlined, HeartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { userRegister } from '../../src/utils/netRequet';
 
 const RegisterForm = () => {
+    const onFinish = async (values: any) => {
+        const { email, username, password } = values;
+        const result = await userRegister('/user/register', { email, username, password });
+        console.log(result);
+    };
     return (
         <div className="back-register">
             <div className="register-box">
                 <h3>注册账户</h3>
-                <Form layout="vertical" className="register-form">
+                <Form layout="vertical" className="register-form" onFinish={onFinish}>
                     <Form.Item
                         name="email"
                         rules={[
